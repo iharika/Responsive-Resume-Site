@@ -1,12 +1,17 @@
 html {
-    box-sizing: border-box
+  box-sizing: border-box;
 }
 *,
 *::after,
 *::before {
-    box-sizing: inherit
+  box-sizing: inherit;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
 }
 p {
@@ -15,11 +20,16 @@ p {
 .container {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-.picture, .resume {
+.picture,
+.resume {
   position: fixed;
   width: 45%;
   padding: 3.125rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 .picture {
   top: 0;
@@ -42,7 +52,8 @@ p {
   z-index: -1;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/profile.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/profile.jpg");
   background-size: cover;
   background-position: center top;
   filter: brightness(90%);
@@ -63,6 +74,7 @@ p {
   font-weight: 300;
   line-height: 1.818;
   overflow-y: scroll;
+  width: 55%;
 }
 .part {
   width: 100%;
@@ -73,7 +85,8 @@ p {
 .part:first-child {
   margin-top: 0;
 }
-.sidebar, .main {
+.sidebar,
+.main {
   float: left;
 }
 .sidebar {
@@ -81,7 +94,8 @@ p {
 }
 .main {
   width: 90%;
-  padding-right: 25%;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 .tag {
   text-transform: uppercase;
@@ -90,9 +104,41 @@ p {
   color: rgb(43, 93, 240);
 }
 
-@media screen and (min-width: 0) and (max-width: 420px) {
+@media screen and (max-width: 420px) {
   .picture {
     display: none;
   }
 
+  .resume {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+    padding: 0;
+  }
+
+  .resume {
+    margin: 0;
+    padding: 5%;
+    width: 50%;
+  }
+
+  .picture {
+    width: 50%;
+  }
 }
